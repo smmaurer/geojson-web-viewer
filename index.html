@@ -1,7 +1,10 @@
 <html>
 <head>
+<meta charset='utf-8' />
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
+<title>geojson-web-viewer</title>
 </head>
 
 <body>
@@ -13,7 +16,7 @@ var map = new mapboxgl.Map({
     center: [-122.4486, 37.7452],
     container: 'map',
     hash: 'true',
-    style: 'mapbox://styles/mapbox/streets-v9',
+    style: 'mapbox://styles/mapbox/light-v9',
     zoom: 12
 });
 
@@ -34,7 +37,7 @@ map.on('load', function() {
         },
         paint: {
             'line-color': 'black',
-            'line-width': 3
+            'line-width': 2
         }
     });
 });
