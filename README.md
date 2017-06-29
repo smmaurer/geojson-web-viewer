@@ -14,7 +14,4 @@ https://smmaurer.github.io/geojson-web-viewer
 
 For now it's hard-coded to a particular file of mine. Feel free to fork this repository and edit the code to host your own map. 
 
-Coming soon:
-- zoom to bounds of geojson file
-- an indication of your current location
-- dialog box to load an arbitrary geojson file
+Check out the Issues tab for features I'm working on.
