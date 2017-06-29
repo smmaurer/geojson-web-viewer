@@ -15,9 +15,8 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic21tYXVyZXIiLCJhIjoiY2o0aHBrajdtMDB0YTMzb2cxd
 var map = new mapboxgl.Map({
     center: [-122.4486, 37.7452],
     container: 'map',
-    hash: 'true',
     style: 'mapbox://styles/mapbox/light-v9',
-    zoom: 12
+    zoom: 11
 });
 
 map.on('load', function() {
@@ -40,6 +39,8 @@ map.on('load', function() {
             'line-width': 2
         }
     });
+    
+    map.fitBounds
     
     map.addControl(new mapboxgl.GeolocateControl());
 });
