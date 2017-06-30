@@ -23,7 +23,7 @@ map.on('load', function() {
 
     map.addSource('data', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/gist/smmaurer/eddb484bc73eaed8a8c498589e0627bf/raw/72caf5c7c733f21c19ae6f6bd40dd77ab19ca1a4/map.geojson'
+        data: parseUrl(),
     });
     
     map.addLayer({
@@ -44,6 +44,16 @@ map.on('load', function() {
     
     map.addControl(new mapboxgl.GeolocateControl());
 });
+
+function parseUrl() {
+    // pull geojson URL out of the query parameters
+    var pairs = window.location.search.substring(1).split('&');
+    var keyval = pairs[0].split('=');
+    if (keyval[0] == 'url') {
+        console.log(decodeURIComponent(keyval[1]));
+        return decodeURIComponent(keyval[1]);
+    }
+}
 
 </script>
 </body>
