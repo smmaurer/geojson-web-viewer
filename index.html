@@ -39,9 +39,8 @@ map.on('load', function() {
             'line-width': 2
         }
     });
-    
-    map.fitBounds
-    
+            
+    map.fitBounds(parseBbox());
     map.addControl(new mapboxgl.GeolocateControl());
 });
 
@@ -52,6 +51,19 @@ function parseUrl() {
     if (keyval[0] == 'url') {
         console.log(decodeURIComponent(keyval[1]));
         return decodeURIComponent(keyval[1]);
+    }
+}
+
+function parseBbox() {
+    // pull bounding box out of the query parameters
+    var pairs = window.location.search.substring(1).split('&');
+    for (var i=0; i<pairs.length; i++) {
+        var keyval = pairs[i].split('=');
+        if (keyval[0] == 'bbox') {
+            console.log(keyval[1]);
+            var coords = keyval[1].split(',');
+            return [[coords[0], coords[1]], [coords[2], coords[3]]]
+        }
     }
 }
 
